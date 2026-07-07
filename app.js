@@ -282,13 +282,15 @@
     karyaKelas: 'all', karyaJenis: 'all', karyaSearch: '', karyaDetail: null,
     pustakaSearch: '', pustakaKategori: 'all', pustakaLevel: 'all', pustakaDetail: null, pustakaReading: false, pustakaPage: 0,
     alAngkatan: 'all', alSearch: '', alfNama: '', alfLulus: '', alfKegiatan: '', alfPesan: '', alSent: false, alErr: '',
+    kalKat: 'all',
+    ppNama: '', ppTgl: '', ppOrtu: '', ppHp: '', ppAlamat: '', ppJalur: 'Zonasi', ppSent: false, ppErr: '',
     artikelSearch: '', artikelShown: 4, artikelDetail: null,
     auth: null, loginEmail: '', loginPass: '', loginError: '',
     waliChild: 0, cmsTab: 'artikel', extraArtikel: 0, scrolled: false,
     adKind: 'keluhan', adAnon: false, adName: '', adEmail: '', adHp: '', adMsg: '', adSent: false, adErr: ''
   };
   function setState(patch) { for (var kk in patch) state[kk] = patch[kk]; render(); }
-  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, pustakaDetail: null, pustakaReading: false, pustakaPage: 0, alSent: false, alErr: '', loginError: '' }); window.scrollTo(0, 0); }
+  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, pustakaDetail: null, pustakaReading: false, pustakaPage: 0, alSent: false, alErr: '', ppSent: false, ppErr: '', loginError: '' }); window.scrollTo(0, 0); }
 
   // ---- reusable partials ----
   function chips(current) {
@@ -319,22 +321,22 @@
     }).join('');
 
     return '' +
-      '<section class="hero"><div class="hero-bg"></div><div class="hero-fade"></div><div class="hero-toon"><svg class="swinger" viewBox="0 0 130 210" fill="none" stroke="#8a1f2e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M65 2 Q60 34 66 60" stroke="#2a9d8f" stroke-width="3"/><circle cx="66" cy="78" r="11" fill="#fff"/><path d="M66 60 L52 82 M66 60 L80 82"/><path d="M66 89 L66 132"/><g class="toon-legs"><path d="M66 132 L50 172 M66 132 L82 168"/></g></svg></div><div class="hero-inner"><span class="pill">🍬 Belajar sambil berkarya</span><h1>Tumbuh cerdas, kreatif, dan <em>berkarakter!</em></h1><p class="hero-lead">Portal ceria SD Negeri 8 Arawai — kurikulum, jadwal, karya murid, dan pengumuman dalam satu tempat.</p><div class="hero-cta"><button class="btn btn-p" data-go="akses">Info Pendaftaran</button><button class="btn btn-o hero-o" data-go="karya">Lihat Karya Murid</button></div></div></section>' +
+      '<section class="hero"><div class="hero-bg"></div><div class="hero-fade"></div><div class="hero-toon"><svg class="swinger" viewBox="0 0 130 210" fill="none" stroke="#8a1f2e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M65 2 Q60 34 66 60" stroke="#2a9d8f" stroke-width="3"/><circle cx="66" cy="78" r="11" fill="#fff"/><path d="M66 60 L52 82 M66 60 L80 82"/><path d="M66 89 L66 132"/><g class="toon-legs"><path d="M66 132 L50 172 M66 132 L82 168"/></g></svg></div><div class="hero-inner"><span class="pill">🍬 Belajar sambil berkarya</span><h1>Tumbuh cerdas, kreatif, dan <em>berkarakter!</em></h1><p class="hero-lead">Portal ceria SD Negeri 8 Arawai — kurikulum, jadwal, karya murid, dan pengumuman dalam satu tempat.</p><div class="hero-cta"><button class="btn btn-p" data-go="ppdb">Info Pendaftaran</button><button class="btn btn-o hero-o" data-go="karya">Lihat Karya Murid</button></div></div></section>' +
 
       '<section class="wrap sec lay-sec" style="padding-top:8px"><div class="sec-head"><div><span class="eyebrow">Layanan Sekolah</span><h2 class="sec-title" style="margin-top:8px">Layanan Digital Sekolah</h2></div></div><div class="lay-runzone"><div class="lay-runner"><div class="lay-bob"><div class="rn-shout">yeaa aku juara!</div><div class="rn-fig"><svg viewBox="0 0 74 64" fill="none" stroke="#8a1f2e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="13" r="8.4" fill="#fff"/><path d="M18.5 11.5 Q20.5 9.8 22.5 11.5 M25 11.5 Q27 9.8 29 11.5"/><circle cx="23.5" cy="16.5" r="1.7" fill="#8a1f2e" stroke="none"/><path d="M25 21 L18 42"/><g class="rn-arm"><path d="M24 25 L11 21"/></g><g class="rn-leg1"><path d="M18 42 L31 55"/></g><g class="rn-leg2"><path d="M18 42 L5 57"/></g><path d="M24 24 L49 29"/><g stroke-width="2.6"><path d="M45 16 L61 16 L59 25 Q53 31 47 25 Z"/><path d="M45 17 Q39 18 43 25 M61 17 Q67 18 63 25"/><path d="M53 31 L53 36 M48 37 L58 37 M50 40 L56 40"/><path d="M53 36 L49 29" stroke-width="3.4"/><text x="53" y="24" font-size="9" font-weight="800" fill="#8a1f2e" stroke="none" text-anchor="middle" font-family="Baloo 2,cursive">1</text></g></svg></div></div></div></div><div class="lay-grid">' +
       '<button class="lay-card" data-go="akademik"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div><h4>Sistem Informasi Akademik</h4><p>Data nilai, rapor, dan perkembangan belajar murid dalam satu portal.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="perpustakaan"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Perpustakaan Digital</h4><p>Koleksi buku, cerita, dan bahan bacaan yang bisa diakses kapan saja.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card gold" data-go="alumni"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Portal Alumni</h4><p>Wadah silaturahmi dan jejak prestasi para lulusan SD Negeri 8 Arawai.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="guru-murid"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Guru & Tenaga Kependidikan</h4><p>Direktori guru dan staf pengajar beserta perannya di sekolah.</p><span class="go">Buka layanan →</span></button>' +
-      '<button class="lay-card" data-go="jadwal"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Kalender Akademik</h4><p>Jadwal pelajaran, kegiatan, libur, dan agenda penting sepanjang tahun.</p><span class="go">Buka layanan →</span></button>' +
-      '<div class="lay-card gold" style="cursor:default;display:flex;flex-direction:column;justify-content:center"><h4 style="font-size:19px">Semua layanan dalam satu portal</h4><p>Akses cepat ke informasi akademik, karya, dan agenda sekolah — kapan saja, di mana saja.</p></div>' +
+      '<button class="lay-card" data-go="kalender"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Kalender Akademik</h4><p>Jadwal kegiatan, asesmen, libur, dan agenda penting sepanjang tahun.</p><span class="go">Buka layanan →</span></button>' +
+      '<button class="lay-card gold" data-go="ppdb"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div><h4>PPDB Online</h4><p>Penerimaan peserta didik baru: info gelombang, syarat, jalur, dan formulir pendaftaran.</p><span class="go">Buka layanan →</span></button>' +
       '</div></section>' +
 
       '<section class="wrap sec" style="padding-top:8px"><div class="sec-head"><div><span class="eyebrow">Profil Sekolah</span><h2 class="sec-title" style="margin-top:8px">Visi & Misi Kami</h2></div><button class="btn btn-g btn-sm" data-go="profil">Semua profil →</button></div>' + sambutanBlocks('22px') + '<div class="vm"><div class="vm-card card"><div class="pill">Visi</div><h3 class="serif" style="margin-top:14px;font-weight:600">“Menjadi sekolah dasar unggul yang membentuk generasi berkarakter, kreatif, dan mandiri.”</h3><p class="muted" style="margin-top:12px">SD Negeri 8 Arawai berlokasi di Jl. Melati No. 8, Arawai, menaungi murid dari Kelas 1 hingga Kelas 6.</p></div><div class="vm-card card"><div class="pill">Misi</div><div style="margin-top:12px">' + misiList(misi) + '</div></div></div></section>' +
 
       '<section class="wrap sec" style="padding-top:0"><div class="sec-head"><div><span class="eyebrow">Materi & Kurikulum Singkat</span><h2 class="sec-title" style="margin-top:8px">Jenjang Kelas 1 – 6</h2></div><button class="btn btn-g btn-sm" data-go="jadwal">Lihat Kurikulum Lengkap →</button></div><div class="kelas-grid">' + kelasRingkas + '</div></section>' +
 
-      '<section class="wrap sec" style="padding-top:0"><div class="psb"><div><div class="psb-period">◷ Gelombang 1: Januari – Maret 2026</div><h2>Penerimaan Siswa Baru 2026/2027</h2><p>Bergabunglah bersama keluarga besar SD Negeri 8 Arawai. Daftarkan putra-putri Anda dan mulai perjalanan belajar yang menyenangkan.</p><div class="hero-cta"><button class="btn btn-light" data-go="akses">Daftar Sekarang</button><button class="btn btn-o" style="color:#fff;border-color:rgba(255,255,255,.5)" data-go="akses">Info Lengkap PSB</button></div></div><div class="psb-steps"><div style="font-weight:800;margin-bottom:6px">Alur singkat</div><div class="psb-step"><b>1</b><span>Isi formulir pendaftaran online.</span></div><div class="psb-step"><b>2</b><span>Unggah berkas persyaratan.</span></div><div class="psb-step"><b>3</b><span>Verifikasi & observasi anak.</span></div><div class="psb-step"><b>4</b><span>Pengumuman & daftar ulang.</span></div></div></div></section>' +
+      '<section class="wrap sec" style="padding-top:0"><div class="psb"><div><div class="psb-period">◷ Gelombang 1: Januari – Maret 2026</div><h2>Penerimaan Siswa Baru 2026/2027</h2><p>Bergabunglah bersama keluarga besar SD Negeri 8 Arawai. Daftarkan putra-putri Anda dan mulai perjalanan belajar yang menyenangkan.</p><div class="hero-cta"><button class="btn btn-light" data-go="ppdb">Daftar Sekarang</button><button class="btn btn-o" style="color:#fff;border-color:rgba(255,255,255,.5)" data-go="ppdb">Info Lengkap PSB</button></div></div><div class="psb-steps"><div style="font-weight:800;margin-bottom:6px">Alur singkat</div><div class="psb-step"><b>1</b><span>Isi formulir pendaftaran online.</span></div><div class="psb-step"><b>2</b><span>Unggah berkas persyaratan.</span></div><div class="psb-step"><b>3</b><span>Verifikasi & observasi anak.</span></div><div class="psb-step"><b>4</b><span>Pengumuman & daftar ulang.</span></div></div></div></section>' +
 
       '<section class="wrap sec" style="padding-top:0"><div class="two-col"><div><div class="sec-head" style="margin-bottom:8px"><h2 class="sec-title" style="font-size:23px">Pengumuman Terbaru</h2></div>' + anns + '</div><div><div class="sec-head" style="margin-bottom:8px"><h2 class="sec-title" style="font-size:23px">Berita Terkini</h2></div><div class="card" style="padding:6px 18px">' + berita + '</div></div></div></section>';
   }
@@ -503,6 +505,75 @@
       '</section>';
   }
 
+  function viewKalender() {
+    var agenda = [
+      ['14 Jul 2025', 'kegiatan', 'Hari Pertama Masuk Sekolah', 'Awal Semester Ganjil Tahun Ajaran 2025/2026.'],
+      ['14–16 Jul 2025', 'kegiatan', 'Masa Pengenalan Lingkungan Sekolah', 'Pengenalan sekolah bagi murid baru Kelas 1.'],
+      ['17 Agu 2025', 'kegiatan', 'Upacara HUT Kemerdekaan RI', 'Peringatan Hari Kemerdekaan Republik Indonesia.'],
+      ['15–20 Sep 2025', 'asesmen', 'Asesmen Sumatif Tengah Semester', 'Penilaian tengah semester ganjil untuk Kelas 1–6.'],
+      ['25 Nov 2025', 'kegiatan', 'Peringatan Hari Guru Nasional', 'Apresiasi bagi para guru SD Negeri 8 Arawai.'],
+      ['1–6 Des 2025', 'asesmen', 'Asesmen Sumatif Akhir Semester Ganjil', 'Penilaian akhir semester ganjil.'],
+      ['19 Des 2025', 'asesmen', 'Pembagian Rapor Semester Ganjil', 'Penerimaan laporan hasil belajar oleh wali murid.'],
+      ['20 Des 2025 – 3 Jan 2026', 'libur', 'Libur Semester Ganjil', 'Libur akhir semester ganjil.'],
+      ['5 Jan 2026', 'kegiatan', 'Awal Semester Genap', 'Hari pertama masuk pada semester genap.'],
+      ['8–12 Jan 2026', 'kegiatan', 'Pekan Karya Wirausaha', 'Bazar dan pameran karya kewirausahaan murid.'],
+      ['Jan – Mar 2026', 'psb', 'PPDB Gelombang 1 (TA 2026/2027)', 'Pendaftaran peserta didik baru gelombang pertama.'],
+      ['16–21 Mar 2026', 'asesmen', 'Asesmen Sumatif Tengah Semester Genap', 'Penilaian tengah semester genap.'],
+      ['Mei 2026', 'asesmen', 'Asesmen Sumatif Kelas 6', 'Penilaian akhir jenjang bagi murid Kelas 6.'],
+      ['2–5 Jun 2026', 'asesmen', 'Asesmen Sumatif Akhir Tahun', 'Penilaian kenaikan kelas untuk Kelas 1–5.'],
+      ['19 Jun 2026', 'asesmen', 'Pembagian Rapor Semester Genap', 'Penerimaan rapor kenaikan kelas.'],
+      ['27 Jun – 11 Jul 2026', 'libur', 'Libur Akhir Tahun Ajaran', 'Libur kenaikan kelas menuju TA 2026/2027.']
+    ];
+    var catLabel = { kegiatan: 'Kegiatan', asesmen: 'Asesmen', libur: 'Libur', psb: 'PPDB' };
+    var chipsRow = [['all', 'Semua'], ['kegiatan', 'Kegiatan'], ['asesmen', 'Asesmen'], ['libur', 'Libur'], ['psb', 'PPDB']].map(function (c) {
+      return '<button class="chip ' + (state.kalKat === c[0] ? 'on' : '') + '" data-action="kalKat" data-kat="' + c[0] + '">' + c[1] + '</button>';
+    }).join('');
+    var rows = agenda.filter(function (a) { return state.kalKat === 'all' || a[1] === state.kalKat; }).map(function (a) {
+      return '<div class="kal-row"><div class="kal-date">' + esc(a[0]) + '</div><div class="kal-body"><span class="kal-cat kcat-' + a[1] + '">' + catLabel[a[1]] + '</span><h4>' + esc(a[2]) + '</h4><p>' + esc(a[3]) + '</p></div></div>';
+    }).join('');
+    return '<section class="wrap sec">' +
+      '<div class="pustaka-hero kalender"><div><span class="pill" style="background:rgba(255,255,255,.16);color:#fff">Agenda Sekolah</span><h1>Kalender Akademik 2025/2026</h1><p>Jadwal kegiatan, asesmen, hari libur, dan agenda penting SD Negeri 8 Arawai sepanjang tahun ajaran — dalam satu halaman.</p></div><div class="pustaka-hero-stats"><div><b>2025/26</b><span>Tahun Ajaran</span></div><div><b>2</b><span>Semester</span></div><div><b>' + agenda.length + '</b><span>Agenda</span></div></div></div>' +
+      '<div class="kal-sem" style="margin-top:38px"><div class="kal-sem-card card"><div class="kal-sem-ic">📗</div><div><h4>Semester Ganjil</h4><p>14 Juli 2025 – 19 Desember 2025</p></div></div><div class="kal-sem-card card"><div class="kal-sem-ic">📘</div><div><h4>Semester Genap</h4><p>5 Januari 2026 – 19 Juni 2026</p></div></div></div>' +
+      '<div class="sec-head"><div><span class="eyebrow">Agenda Tahun Ajaran</span><h2 class="sec-title" style="margin-top:8px">Jadwal Kegiatan &amp; Libur</h2></div></div><div class="chips" style="margin-bottom:22px">' + chipsRow + '</div><div class="card kal-list">' + rows + '</div><p class="muted" style="font-size:13px;margin-top:14px">*Jadwal dapat menyesuaikan kalender resmi Dinas Pendidikan dan kebijakan sekolah.</p>' +
+      '</section>';
+  }
+
+  function viewPpdb() {
+    var jalur = [
+      ['📍', 'Jalur Zonasi', 'Prioritas bagi calon murid yang berdomisili paling dekat dengan sekolah, dibuktikan dengan Kartu Keluarga.'],
+      ['🤝', 'Jalur Afirmasi', 'Untuk anak dari keluarga kurang mampu atau penyandang disabilitas, dibuktikan dengan DTKS/PIP.'],
+      ['🏆', 'Jalur Prestasi', 'Bagi calon murid dengan prestasi akademik maupun non-akademik yang menonjol.'],
+      ['🚚', 'Perpindahan Tugas', 'Untuk anak yang mengikuti perpindahan tugas orang tua/wali.']
+    ].map(function (j) { return '<div class="sia-card card"><div class="sia-ic">' + j[0] + '</div><h4>' + esc(j[1]) + '</h4><p>' + esc(j[2]) + '</p></div>'; }).join('');
+    var langkah = ['Isi formulir pendaftaran online.', 'Unggah berkas persyaratan.', 'Verifikasi berkas oleh panitia.', 'Observasi & wawancara calon murid.', 'Pengumuman hasil seleksi.', 'Daftar ulang & mulai belajar.'].map(function (t, i) {
+      return '<div class="psb-step"><b>' + (i + 1) + '</b><span>' + esc(t) + '</span></div>';
+    }).join('');
+
+    var formInner;
+    if (state.ppSent) {
+      formInner = '<div class="card aduan-ok"><div class="ic">✓</div><h3>Pendaftaran Terkirim!</h3><p class="muted" style="max-width:36em;margin:0 auto">Terima kasih, data pendaftaran calon murid telah kami terima. Panitia PPDB akan menghubungi Anda melalui WhatsApp untuk verifikasi berkas dan jadwal observasi.</p><button class="btn btn-p" style="margin-top:22px" data-action="resetPpdb">Daftarkan calon murid lain</button></div>';
+    } else {
+      var err = state.ppErr ? '<div class="err">' + esc(state.ppErr) + '</div>' : '';
+      var jopt = function (v) { return '<option value="' + v + '"' + (state.ppJalur === v ? ' selected' : '') + '>' + v + '</option>'; };
+      formInner = '<div class="card aduan-card">' + err +
+        '<div class="dp-grid"><div class="field"><label>Nama Lengkap Calon Murid</label><input type="text" placeholder="Nama calon murid" value="' + esc(state.ppNama) + '" data-model="ppNama" data-focus="ppNama"></div><div class="field"><label>Tanggal Lahir</label><input type="text" placeholder="mis. 12/05/2019" value="' + esc(state.ppTgl) + '" data-model="ppTgl" data-focus="ppTgl"></div></div>' +
+        '<div class="dp-grid"><div class="field"><label>Nama Orang Tua / Wali</label><input type="text" placeholder="Nama orang tua/wali" value="' + esc(state.ppOrtu) + '" data-model="ppOrtu" data-focus="ppOrtu"></div><div class="field"><label>Nomor WhatsApp</label><input type="tel" placeholder="08xx-xxxx-xxxx" value="' + esc(state.ppHp) + '" data-model="ppHp" data-focus="ppHp"></div></div>' +
+        '<div class="field"><label>Jalur Pendaftaran</label><select class="select" style="width:100%" data-model="ppJalur">' + jopt('Zonasi') + jopt('Afirmasi') + jopt('Prestasi') + jopt('Perpindahan Tugas Orang Tua') + '</select></div>' +
+        '<div class="field"><label>Alamat Domisili</label><textarea placeholder="Alamat tempat tinggal sesuai Kartu Keluarga…" data-model="ppAlamat" data-focus="ppAlamat">' + esc(state.ppAlamat) + '</textarea></div>' +
+        '<button class="btn btn-p" style="width:100%;justify-content:center" data-action="submitPpdb">Kirim Pendaftaran</button>';
+    }
+
+    return '<section class="wrap sec">' +
+      '<div class="pustaka-hero"><div><span class="pill" style="background:rgba(255,255,255,.16);color:#fff">PPDB Online 2026/2027</span><h1>Penerimaan Peserta Didik Baru</h1><p>Daftarkan putra-putri Anda ke SD Negeri 8 Arawai secara online. Simak jadwal, syarat, dan jalur pendaftaran, lalu isi formulir langsung dari halaman ini.</p><div class="hero-cta"><a class="btn btn-light" href="#daftar-ppdb">Daftar Sekarang</a></div></div><div class="pustaka-hero-stats"><div><b>2</b><span>Gelombang</span></div><div><b>±28</b><span>Kuota/Kelas</span></div><div><b>Gratis</b><span>Biaya (BOS)</span></div></div></div>' +
+      '<div class="vm" style="margin-top:38px"><div class="vm-card card"><div class="pill">Gelombang 1</div><h3 class="serif" style="margin-top:12px;font-weight:700;font-size:19px">Januari – Maret 2026</h3><p class="muted" style="margin-top:8px;font-size:14px">Pendaftaran awal dengan kuota lebih luas dan observasi lebih awal.</p></div><div class="vm-card card"><div class="pill">Gelombang 2</div><h3 class="serif" style="margin-top:12px;font-weight:700;font-size:19px">April – Juni 2026</h3><p class="muted" style="margin-top:8px;font-size:14px">Pendaftaran lanjutan selama kuota masih tersedia.</p></div></div>' +
+      '<div class="sec-head" style="margin-top:44px"><div><span class="eyebrow">Persyaratan</span><h2 class="sec-title" style="margin-top:8px">Syarat Pendaftaran</h2></div></div><div class="vm"><div class="vm-card card"><div class="pill">Persyaratan Usia</div><div style="margin-top:12px">' + misiList(['Usia 7 tahun per 1 Juli 2026 mendapat prioritas dan wajib diterima.', 'Usia minimal 6 tahun tetap dapat mendaftar.', 'Usia 5 tahun 6 bulan memerlukan rekomendasi psikolog.']) + '</div></div><div class="vm-card card"><div class="pill">Berkas yang Disiapkan</div><div style="margin-top:12px">' + misiList(['Kartu Keluarga (minimal berusia 1 tahun).', 'Akta Kelahiran calon murid.', 'Kartu Identitas Anak (KIA) atau NIK.', 'Pas foto terbaru & bukti DTKS/PIP (jalur afirmasi).']) + '</div></div></div>' +
+      '<div class="sec-head" style="margin-top:44px"><div><span class="eyebrow">Jalur Pendaftaran</span><h2 class="sec-title" style="margin-top:8px">Pilihan Jalur Masuk</h2></div></div><div class="sia-grid">' + jalur + '</div>' +
+      '<div class="psb" style="margin-top:44px"><div><span class="psb-period">◷ Gelombang 1: Januari – Maret 2026</span><h2>Alur Pendaftaran</h2><p>Ikuti enam langkah mudah berikut untuk mendaftarkan calon murid baru secara online.</p><div class="hero-cta"><a class="btn btn-light" href="#daftar-ppdb">Isi Formulir</a></div></div><div class="psb-steps"><div style="font-weight:800;margin-bottom:6px">Langkah</div>' + langkah + '</div></div>' +
+      '<div id="daftar-ppdb" style="margin-top:48px"><div class="sec-head"><div><span class="eyebrow">Formulir</span><h2 class="sec-title" style="margin-top:8px">Formulir Pendaftaran</h2></div></div><p class="muted" style="max-width:48em;margin:-8px 0 20px">Lengkapi data berikut. Setelah dikirim, panitia PPDB akan menghubungi Anda untuk verifikasi berkas dan jadwal observasi.</p><div class="aduan" style="margin:0">' + formInner + '</div></div>' +
+      '<div class="sia-note card" style="margin-top:24px"><div class="sia-ic">💬</div><div><h4>Butuh Bantuan?</h4><p>Hubungi panitia PPDB SD Negeri 8 Arawai melalui WhatsApp <b>+62 812-3456-7890</b> pada jam kerja, atau datang langsung ke sekolah di Jl. Melati No. 8, Arawai.</p></div></div>' +
+      '</section>';
+  }
+
   function viewAkademik() {
     var modul = [
       ['👦', 'Data Induk Siswa', 'Biodata lengkap murid Kelas 1–6 yang terhubung dengan Dapodik sebagai data pokok pendidikan nasional.'],
@@ -574,7 +645,8 @@
   var VIEWS = {
     beranda: viewBeranda, profil: viewProfil, jadwal: viewJadwal,
     'guru-murid': viewGuruMurid, karya: viewKarya, perpustakaan: viewPerpustakaan,
-    akademik: viewAkademik, alumni: viewAlumni, artikel: viewArtikel, aduan: viewAduan, akses: viewAkses
+    akademik: viewAkademik, alumni: viewAlumni, kalender: viewKalender, ppdb: viewPpdb,
+    artikel: viewArtikel, aduan: viewAduan, akses: viewAkses
   };
 
   // ---- render ----
@@ -644,6 +716,14 @@
         if (!String(state.alfLulus).trim()) { setState({ alErr: 'Mohon isi tahun kelulusan Anda.' }); break; }
         setState({ alSent: true, alErr: '' }); break;
       case 'resetAlumni': setState({ alfNama: '', alfLulus: '', alfKegiatan: '', alfPesan: '', alSent: false, alErr: '' }); break;
+      case 'kalKat': setState({ kalKat: ds.kat }); break;
+      case 'submitPpdb':
+        if (!state.ppNama.trim()) { setState({ ppErr: 'Mohon isi nama lengkap calon murid.' }); break; }
+        if (!String(state.ppTgl).trim()) { setState({ ppErr: 'Mohon isi tanggal lahir calon murid.' }); break; }
+        if (!state.ppOrtu.trim()) { setState({ ppErr: 'Mohon isi nama orang tua/wali.' }); break; }
+        if (!state.ppHp.trim()) { setState({ ppErr: 'Mohon isi nomor WhatsApp yang bisa dihubungi.' }); break; }
+        setState({ ppSent: true, ppErr: '' }); break;
+      case 'resetPpdb': setState({ ppNama: '', ppTgl: '', ppOrtu: '', ppHp: '', ppAlamat: '', ppJalur: 'Zonasi', ppSent: false, ppErr: '' }); break;
       case 'adKind': setState({ adKind: ds.kind }); break;
       case 'toggleAnon': setState({ adAnon: !state.adAnon, adErr: '' }); break;
       case 'resetAduan': setState({ adKind: 'keluhan', adAnon: false, adName: '', adEmail: '', adHp: '', adMsg: '', adSent: false, adErr: '' }); break;
@@ -669,7 +749,7 @@
   });
   document.addEventListener('change', function (e) {
     var model = e.target.getAttribute('data-model');
-    if (model && (model === 'karyaKelas' || model === 'karyaJenis' || model === 'pustakaKategori' || model === 'pustakaLevel' || model === 'alAngkatan')) setState(patchFor(model, e.target.value));
+    if (model && (model === 'karyaKelas' || model === 'karyaJenis' || model === 'pustakaKategori' || model === 'pustakaLevel' || model === 'alAngkatan' || model === 'ppJalur')) setState(patchFor(model, e.target.value));
   });
   function patchFor(model, val) { var p = {}; p[model] = val; return p; }
 

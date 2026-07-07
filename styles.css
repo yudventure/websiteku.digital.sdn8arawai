@@ -315,6 +315,25 @@ button{font-family:inherit}
 .alum-name{font-weight:800;font-size:14.5px;line-height:1.2}
 .alum-sub{font-size:12.5px;color:var(--muted);margin-top:4px}
 .alum-badge{display:inline-block;font-size:11px;font-weight:800;color:var(--maroon);background:var(--maroon-t2);padding:2px 9px;border-radius:999px;margin-right:7px}
+/* kalender akademik */
+.pustaka-hero.kalender{background:linear-gradient(120deg,#2a9d8f 0%,#1d6f66 100%)}
+.kal-sem{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:34px}
+.kal-sem-card{padding:20px 22px;display:flex;gap:16px;align-items:center}
+.kal-sem-ic{width:50px;height:50px;border-radius:14px;background:var(--mint);color:#1d6f66;display:flex;align-items:center;justify-content:center;font-size:24px;flex:none}
+.kal-sem-card h4{font-family:'Baloo 2',cursive;font-weight:800;font-size:16px;margin-bottom:3px}
+.kal-sem-card p{font-size:13.5px;color:var(--muted)}
+.kal-list{padding:4px 20px}
+.kal-row{display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);align-items:flex-start}
+.kal-row:first-child{border-top:none}
+.kal-date{flex:none;width:124px;font-family:'Baloo 2',cursive;font-weight:800;font-size:13.5px;color:var(--ink);line-height:1.35}
+.kal-body{flex:1}
+.kal-cat{display:inline-block;font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+.kal-body h4{font-size:15px;font-weight:800;margin-bottom:3px}
+.kal-body p{font-size:13px;color:var(--muted)}
+.kcat-kegiatan{background:var(--maroon-t2);color:var(--maroon)}
+.kcat-asesmen{background:#fbeecb;color:var(--yellow-d)}
+.kcat-libur{background:var(--mint);color:#1d6f66}
+.kcat-psb{background:#e7edf6;color:#3a6ea5}
 /* articles */
 .art-list{display:flex;flex-direction:column;gap:2px}
 .art-item{display:flex;gap:20px;padding:20px 0;border-top:1px solid var(--line);cursor:pointer}
@@ -419,7 +438,7 @@ button{font-family:inherit}
 .menutog{display:flex;align-items:center;justify-content:center}
 .nav.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:2px solid var(--line);padding:12px;gap:2px;align-items:stretch}
 .nav.open .navlink{text-align:left}
-.hero-grid,.vm,.two-col,.psb,.detail-grid,.cms-grid,.rapor-top,.pustaka-hero,.book-detail,.fase-grid,.role-grid{grid-template-columns:1fr}
+.hero-grid,.vm,.two-col,.psb,.detail-grid,.cms-grid,.rapor-top,.pustaka-hero,.book-detail,.fase-grid,.role-grid,.kal-sem{grid-template-columns:1fr}
 .ftr-in{grid-template-columns:1fr 1fr}
 .p-nilai,.p-fas,.p-sambutan{grid-template-columns:1fr}
 .p-hero{padding:30px}
@@ -434,4 +453,4 @@ button{font-family:inherit}
 .cms-nav{flex-direction:row;overflow-x:auto}
 }
 @media(max-width:700px){.hero-fade{background:linear-gradient(90deg,rgba(255,248,236,.98) 0%,rgba(255,248,236,.95) 55%,rgba(255,248,236,.78) 100%),linear-gradient(to bottom,rgba(255,248,236,0) 46%,#fff9f0 100%)}}
-@media(max-width:560px){.kelas-grid,.guru-grid,.karya-grid,.murid-grid,.lay-grid,.sia-grid,.alum-grid,.alum-dir{grid-template-columns:1fr}.art-item{flex-direction:column}.art-thumb{width:100%;height:150px}.sec-title{font-size:23px}.hero h1{font-size:29px}}
+@media(max-width:560px){.kelas-grid,.guru-grid,.karya-grid,.murid-grid,.lay-grid,.sia-grid,.alum-grid,.alum-dir{grid-template-columns:1fr}.art-item,.kal-row{flex-direction:column}.kal-row .kal-date{width:auto}.art-thumb{width:100%;height:150px}.sec-title{font-size:23px}.hero h1{font-size:29px}}
