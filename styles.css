@@ -217,6 +217,62 @@ button{font-family:inherit}
 .detail-img{aspect-ratio:1/1;border-radius:18px;font-size:13px}
 .back{background:none;border:none;color:var(--maroon);font-weight:700;font-size:14px;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:7px;margin-bottom:22px}
 .maker{display:flex;align-items:center;gap:13px;padding:16px;background:var(--maroon-t2);border-radius:18px;margin-top:24px}
+/* perpustakaan digital */
+.pustaka-hero{background:linear-gradient(120deg,var(--maroon),var(--maroon-d));color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1.5fr 1fr;gap:30px;align-items:center;overflow:hidden;position:relative}
+.pustaka-hero:before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05);top:-70px;right:-40px}
+.pustaka-hero h1{font-size:32px;font-weight:800;font-family:'Baloo 2',cursive;margin-top:10px;max-width:12em}
+.pustaka-hero p{color:rgba(255,255,255,.85);margin-top:12px;max-width:34em;font-size:15px}
+.pustaka-hero-stats{display:flex;gap:14px;position:relative}
+.pustaka-hero-stats div{flex:1;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:16px 12px;text-align:center}
+.pustaka-hero-stats b{display:block;font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;color:var(--yellow)}
+.pustaka-hero-stats span{font-size:11.5px;font-weight:700;color:rgba(255,255,255,.85)}
+.pustaka-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.book-card{cursor:pointer;transition:transform .14s}
+.book-card:hover{transform:translateY(-5px)}
+.book-cover{position:relative;aspect-ratio:3/4;border-radius:6px 12px 12px 6px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px 16px 18px;color:#fff;box-shadow:0 14px 30px rgba(43,36,34,.22)}
+.book-cover:before{content:'';position:absolute;left:0;top:0;bottom:0;width:9px;background:rgba(0,0,0,.22);box-shadow:inset -2px 0 4px rgba(0,0,0,.25)}
+.book-cover:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.32) 100%)}
+.book-card:hover .book-cover{box-shadow:0 20px 40px rgba(43,36,34,.32)}
+.bc-emoji{position:absolute;top:14px;right:14px;font-size:30px;opacity:.9;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+.bc-txt{position:relative;z-index:1}
+.bc-title{font-family:'Baloo 2',cursive;font-weight:800;font-size:17px;line-height:1.15;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.bc-author{font-size:11.5px;font-weight:700;opacity:.9;margin-top:5px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.book-cover.big{border-radius:8px 16px 16px 8px}
+.book-cover.big .bc-title{font-size:23px}
+.book-cover.big .bc-author{font-size:13px}
+.book-cover.big .bc-emoji{font-size:44px}
+.bc0{background:linear-gradient(150deg,#2a9d8f 0%,#1d6f66 100%)}
+.bc1{background:linear-gradient(150deg,#8a1f2e 0%,#6d1622 100%)}
+.bc2{background:linear-gradient(150deg,#c07a2b 0%,#8a1f2e 100%)}
+.bc3{background:linear-gradient(150deg,#e0912a 0%,#c07016 100%)}
+.bc4{background:linear-gradient(150deg,#3a6ea5 0%,#264b73 100%)}
+.book-body{padding:14px 4px 4px}
+.book-body h4{font-size:15px;font-weight:800;font-family:'Baloo 2',cursive;line-height:1.2;margin-bottom:3px}
+.book-tags{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;flex-wrap:wrap}
+.book-tags .pill{font-size:10.5px;padding:4px 10px}
+.book-rate{display:inline-flex;align-items:center;gap:6px;font-size:12.5px}
+.book-rate .stars{color:var(--yellow-d);letter-spacing:1px}
+.book-rate .stars span{color:#e0d6cf}
+.book-rate .stars span.on{color:var(--yellow-d)}
+.book-rate .rate-n{font-weight:800;color:var(--muted);font-size:12px}
+.book-rate.sm{font-size:11px}
+.book-detail{display:grid;grid-template-columns:300px 1fr;gap:44px;align-items:start}
+.book-rate.big,.book-detail .book-rate{margin-bottom:6px}
+.book-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.book-meta div{background:#fff;border:2px solid var(--line);border-radius:14px;padding:12px 15px;display:flex;flex-direction:column;gap:2px}
+.book-meta span{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.book-meta b{font-size:15px;font-weight:800;color:var(--ink)}
+/* reader */
+.reader{max-width:720px;margin:0 auto}
+.reader-head{text-align:center;padding-bottom:20px;border-bottom:2px solid var(--line);margin-bottom:26px}
+.reader-head h1{font-size:30px;font-weight:800;margin-top:12px}
+.reader-page{font-size:17.5px;line-height:1.95;color:#3a2e2a;min-height:220px;font-family:'Nunito',sans-serif}
+.reader-drop{float:left;font-family:'Baloo 2',cursive;font-weight:800;font-size:56px;line-height:.86;color:var(--maroon);margin:4px 12px 0 0}
+.reader-nav{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:32px;padding-top:22px;border-top:2px solid var(--line)}
+.reader-nav .btn[disabled]{opacity:.4;cursor:not-allowed}
+.reader-count{font-weight:800;font-size:13.5px;color:var(--muted);font-family:'Baloo 2',cursive}
+.reader-progress{height:7px;border-radius:999px;background:#eadfd8;margin-top:16px;overflow:hidden}
+.reader-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--maroon),var(--yellow-d));border-radius:999px;transition:width .25s ease}
 /* articles */
 .art-list{display:flex;flex-direction:column;gap:2px}
 .art-item{display:flex;gap:20px;padding:20px 0;border-top:1px solid var(--line);cursor:pointer}
@@ -321,12 +377,15 @@ button{font-family:inherit}
 .menutog{display:flex;align-items:center;justify-content:center}
 .nav.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:2px solid var(--line);padding:12px;gap:2px;align-items:stretch}
 .nav.open .navlink{text-align:left}
-.hero-grid,.vm,.two-col,.psb,.detail-grid,.cms-grid,.rapor-top{grid-template-columns:1fr}
+.hero-grid,.vm,.two-col,.psb,.detail-grid,.cms-grid,.rapor-top,.pustaka-hero,.book-detail{grid-template-columns:1fr}
 .ftr-in{grid-template-columns:1fr 1fr}
 .p-nilai,.p-fas,.p-sambutan{grid-template-columns:1fr}
 .p-hero{padding:30px}
 .p-hero h1{font-size:29px}
-.kelas-grid,.guru-grid,.karya-grid,.murid-grid,.p-nilai,.lay-grid{grid-template-columns:1fr 1fr}
+.pustaka-hero{padding:30px}
+.pustaka-hero h1{font-size:27px}
+.book-detail>div:first-child{max-width:260px;margin:0 auto;width:100%}
+.kelas-grid,.guru-grid,.karya-grid,.murid-grid,.p-nilai,.lay-grid,.pustaka-grid{grid-template-columns:1fr 1fr}
 .hero h1{font-size:34px}
 .hero-img{aspect-ratio:16/10}
 .art-thumb{width:110px;height:82px}
