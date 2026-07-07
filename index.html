@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SD Negeri 8 Arawai — Portal Sekolah</title>
+<meta name="description" content="Portal resmi SD Negeri 8 Arawai — kurikulum, jadwal, karya murid, profil, dan pengumuman sekolah dalam satu tempat.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="cursor-ring"></div><div class="cursor-dot"></div>
+
+<!-- Header -->
+<div class="hdr" id="hdr"><div class="wrap hdr-in">
+  <div class="brand" data-go="beranda"><div class="brand-mark"><img src="assets/logo.png" alt="Logo SD Negeri 8 Arawai"></div><div><div class="brand-name">SD Negeri 8 Arawai</div><div class="brand-sub">Terakreditasi A · Arawai</div></div></div>
+  <nav class="nav" id="nav">
+    <button class="navlink" data-go="beranda" data-route="beranda">Beranda</button>
+    <button class="navlink" data-go="profil" data-route="profil">Profil</button>
+    <button class="navlink" data-go="jadwal" data-route="jadwal">Kurikulum</button>
+    <button class="navlink" data-go="karya" data-route="karya">Ruang Karya</button>
+    <button class="navlink" data-go="artikel" data-route="artikel">Artikel</button>
+    <button class="btn btn-y btn-sm" data-go="akses" id="aksesBtn">Masuk</button>
+  </nav>
+  <button class="menutog" id="menutog">☰</button>
+</div></div>
+<div id="abar-slot"></div>
+
+<!-- Routed content -->
+<main id="view"></main>
+
+<!-- Footer -->
+<footer class="ftr"><div class="wrap ftr-in">
+  <div>
+    <div class="brand" style="cursor:default"><div class="brand-mark"><img src="assets/logo.png" alt="Logo SD Negeri 8 Arawai"></div><div><div class="brand-name" style="color:#fff">SD Negeri 8 Arawai</div><div class="brand-sub" style="color:#c9bfb9">Terakreditasi A</div></div></div>
+    <p style="color:#c9bfb9;font-size:14px;margin-top:16px;max-width:26em">Jl. Melati No. 8, Arawai. Portal digital resmi untuk wali murid, calon pendaftar, dan staf sekolah.</p>
+    <div class="ftr-social">
+      <a class="soc ig" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.44c-3.14 0-3.51.01-4.75.07-1.15.05-1.77.24-2.19.41-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.17.42-.36 1.04-.41 2.19-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.05 1.15.24 1.77.41 2.19.21.55.47.94.88 1.35.41.41.8.67 1.35.88.42.17 1.04.36 2.19.41 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c1.15-.05 1.77-.24 2.19-.41.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.17-.42.36-1.04.41-2.19.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.05-1.15-.24-1.77-.41-2.19a3.6 3.6 0 0 0-.88-1.35 3.6 3.6 0 0 0-1.35-.88c-.42-.17-1.04-.36-2.19-.41-1.24-.06-1.61-.07-4.75-.07zm0 3.68a4.72 4.72 0 1 1 0 9.44 4.72 4.72 0 0 1 0-9.44zm0 7.79a3.07 3.07 0 1 0 0-6.14 3.07 3.07 0 0 0 0 6.14zm6.01-7.97a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0z"/></svg></a>
+      <a class="soc fb" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+      <a class="soc tt" href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.2v12.9a2.59 2.59 0 0 1-2.58 2.4 2.59 2.59 0 1 1 .7-5.08V7.97a5.83 5.83 0 0 0-.7-.04A5.79 5.79 0 1 0 15.35 13.7V8.16a7.5 7.5 0 0 0 4.4 1.41V6.37a4.28 4.28 0 0 1-3.15-.55z"/></svg></a>
+      <a class="soc yt" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.5a3.02 3.02 0 0 0-2.12-2.14C19.5 3.85 12 3.85 12 3.85s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.24 3.6-6.24 3.6z"/></svg></a>
+    </div>
+  </div>
+  <div><h4>Navigasi</h4>
+    <button class="ftr-link" data-go="beranda">Beranda</button>
+    <button class="ftr-link" data-go="jadwal">Jadwal & Kurikulum</button>
+    <button class="ftr-link" data-go="guru-murid">Guru & Murid</button>
+    <button class="ftr-link" data-go="karya">Ruang Karya</button>
+  </div>
+  <div><h4>Kontak</h4>
+    <a class="ftr-contact" href="https://wa.me/6281234567890" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.23-8.24 8.23a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.24-8.24zm4.52 10.31c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05 0 1.21.88 2.38 1.01 2.54.12.17 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>+62 812-3456-7890</a>
+    <a class="ftr-contact" href="mailto:info@sdn8arawai.sch.id"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>info@sdn8arawai.sch.id</a>
+    <a class="ftr-wb" data-go="aduan" style="cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15V4a1 1 0 0 1 1-1h9l-1 3 1 3H5"/><line x1="4" y1="22" x2="4" y2="15"/></svg>Layanan Aduan</a>
+  </div>
+  <div><h4>Lokasi</h4>
+    <div class="ftr-map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=VJ2G%2B9J%20Araway%20Raja%20Ampat%20Regency%20West%20Papua&z=16&output=embed" title="Lokasi SD Negeri 8 Arawai" allowfullscreen></iframe></div>
+  </div>
+</div>
+<div class="wrap ftr-bot"><span>© 2026 SD Negeri 8 Arawai. Portal sekolah terpadu.</span><span>Dibuat untuk keluarga besar sekolah.</span></div></footer>
+
+<script src="app.js"></script>
+</body>
+</html>
