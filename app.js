@@ -230,6 +230,22 @@
     'wali@sekolah.id': { pass: 'wali123', role: 'wali', name: 'Ibu Sari' },
     'staf@sekolah.id': { pass: 'staf123', role: 'staf', name: 'Bapak Andi' }
   };
+
+  // ---- portal alumni (alumni directory + stories) ----
+  var alumni = [
+    { name: 'dr. Yosafat Rumbewas', lulus: 1990, kegiatan: 'Dokter di RSUD Raja Ampat', star: true, quote: 'Di SD Negeri 8 Arawai saya belajar disiplin dan berani bermimpi besar. Dari bangku sederhana inilah perjalanan saya menuju bangku kedokteran dimulai.' },
+    { name: 'Serepina Mayor, S.Pd.', lulus: 2001, kegiatan: 'Guru & Penggerak Literasi', star: true, quote: 'Guru-guru di sini menanamkan cinta membaca sejak dini. Kini saya meneruskan semangat itu kepada anak-anak di kampung halaman.' },
+    { name: 'Gerald Wanma', lulus: 2016, kegiatan: 'Mahasiswa Teknik Kelautan & Atlet Renang', star: true, quote: 'Nilai kerja keras dan sportivitas yang saya dapat di sekolah mengantar saya meraih beasiswa dan medali renang tingkat daerah.' },
+    { name: 'Marthen Sauyai', lulus: 1985, kegiatan: 'Tokoh Masyarakat & Nelayan' },
+    { name: 'Agustina Fakdawer', lulus: 1994, kegiatan: 'Perawat Puskesmas Arawai' },
+    { name: 'Yulius Mambrasar', lulus: 1998, kegiatan: 'Wirausaha Homestay Pariwisata' },
+    { name: 'Debora Rumadas', lulus: 2005, kegiatan: 'Bidan Desa' },
+    { name: 'Frans Ayello', lulus: 2009, kegiatan: 'Anggota Polri (Bhabinkamtibmas)' },
+    { name: 'Naomi Mirino', lulus: 2013, kegiatan: 'Mahasiswa Keguruan' },
+    { name: 'Kevin Arwam', lulus: 2019, kegiatan: 'Pelajar SMA' },
+    { name: 'Priska Wombaki', lulus: 2021, kegiatan: 'Pelajar SMP' },
+    { name: 'Michael Rumbruren', lulus: 2023, kegiatan: 'Pelajar SMP' }
+  ].map(function (a) { a.ini = ini(a.name.replace(/^(dr\.|drs\.|dra\.|ir\.)\s*/i, '')); return a; });
   var profil = {
     sambutan: 'Selamat datang di portal resmi SD Negeri 8 Arawai. Kami berkomitmen menghadirkan pendidikan dasar yang menyenangkan, membentuk karakter, dan menumbuhkan kreativitas serta jiwa wirausaha setiap murid. Semoga portal ini mempererat kerja sama antara sekolah, murid, dan orang tua.',
     kepsek: 'Bapak Yohanes Rumbewas, S.Pd.',
@@ -265,13 +281,14 @@
     jadwalKelas: 1, gmTab: 'guru',
     karyaKelas: 'all', karyaJenis: 'all', karyaSearch: '', karyaDetail: null,
     pustakaSearch: '', pustakaKategori: 'all', pustakaLevel: 'all', pustakaDetail: null, pustakaReading: false, pustakaPage: 0,
+    alAngkatan: 'all', alSearch: '', alfNama: '', alfLulus: '', alfKegiatan: '', alfPesan: '', alSent: false, alErr: '',
     artikelSearch: '', artikelShown: 4, artikelDetail: null,
     auth: null, loginEmail: '', loginPass: '', loginError: '',
     waliChild: 0, cmsTab: 'artikel', extraArtikel: 0, scrolled: false,
     adKind: 'keluhan', adAnon: false, adName: '', adEmail: '', adHp: '', adMsg: '', adSent: false, adErr: ''
   };
   function setState(patch) { for (var kk in patch) state[kk] = patch[kk]; render(); }
-  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, pustakaDetail: null, pustakaReading: false, pustakaPage: 0, loginError: '' }); window.scrollTo(0, 0); }
+  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, pustakaDetail: null, pustakaReading: false, pustakaPage: 0, alSent: false, alErr: '', loginError: '' }); window.scrollTo(0, 0); }
 
   // ---- reusable partials ----
   function chips(current) {
@@ -307,7 +324,7 @@
       '<section class="wrap sec lay-sec" style="padding-top:8px"><div class="sec-head"><div><span class="eyebrow">Layanan Sekolah</span><h2 class="sec-title" style="margin-top:8px">Layanan Digital Sekolah</h2></div></div><div class="lay-runzone"><div class="lay-runner"><div class="lay-bob"><div class="rn-shout">yeaa aku juara!</div><div class="rn-fig"><svg viewBox="0 0 74 64" fill="none" stroke="#8a1f2e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="13" r="8.4" fill="#fff"/><path d="M18.5 11.5 Q20.5 9.8 22.5 11.5 M25 11.5 Q27 9.8 29 11.5"/><circle cx="23.5" cy="16.5" r="1.7" fill="#8a1f2e" stroke="none"/><path d="M25 21 L18 42"/><g class="rn-arm"><path d="M24 25 L11 21"/></g><g class="rn-leg1"><path d="M18 42 L31 55"/></g><g class="rn-leg2"><path d="M18 42 L5 57"/></g><path d="M24 24 L49 29"/><g stroke-width="2.6"><path d="M45 16 L61 16 L59 25 Q53 31 47 25 Z"/><path d="M45 17 Q39 18 43 25 M61 17 Q67 18 63 25"/><path d="M53 31 L53 36 M48 37 L58 37 M50 40 L56 40"/><path d="M53 36 L49 29" stroke-width="3.4"/><text x="53" y="24" font-size="9" font-weight="800" fill="#8a1f2e" stroke="none" text-anchor="middle" font-family="Baloo 2,cursive">1</text></g></svg></div></div></div></div><div class="lay-grid">' +
       '<button class="lay-card" data-go="akademik"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div><h4>Sistem Informasi Akademik</h4><p>Data nilai, rapor, dan perkembangan belajar murid dalam satu portal.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="perpustakaan"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Perpustakaan Digital</h4><p>Koleksi buku, cerita, dan bahan bacaan yang bisa diakses kapan saja.</p><span class="go">Buka layanan →</span></button>' +
-      '<button class="lay-card gold" data-go="artikel"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Portal Alumni</h4><p>Wadah silaturahmi dan jejak prestasi para lulusan SD Negeri 8 Arawai.</p><span class="go">Buka layanan →</span></button>' +
+      '<button class="lay-card gold" data-go="alumni"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Portal Alumni</h4><p>Wadah silaturahmi dan jejak prestasi para lulusan SD Negeri 8 Arawai.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="guru-murid"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Guru & Tenaga Kependidikan</h4><p>Direktori guru dan staf pengajar beserta perannya di sekolah.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="jadwal"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Kalender Akademik</h4><p>Jadwal pelajaran, kegiatan, libur, dan agenda penting sepanjang tahun.</p><span class="go">Buka layanan →</span></button>' +
       '<div class="lay-card gold" style="cursor:default;display:flex;flex-direction:column;justify-content:center"><h4 style="font-size:19px">Semua layanan dalam satu portal</h4><p>Akses cepat ke informasi akademik, karya, dan agenda sekolah — kapan saja, di mana saja.</p></div>' +
@@ -453,6 +470,39 @@
     return '<section class="wrap sec"><div class="aduan"><div style="text-align:center;margin-bottom:22px"><span class="eyebrow">Layanan Aduan</span><h1 class="sec-title" style="font-size:30px;margin-top:8px">Sampaikan Aduan & Saran</h1><p class="muted" style="font-size:14.5px;margin-top:8px;max-width:40em;margin-left:auto;margin-right:auto">Laporkan keluhan atau berikan saran untuk SD Negeri 8 Arawai. Anda dapat mengirim secara anonim, atau sertakan identitas agar kami bisa menindaklanjuti.</p></div><div class="card aduan-card">' + err + '<div class="field"><label>Jenis</label><div class="seg"><button class="' + (state.adKind === 'keluhan' ? 'on' : '') + '" data-action="adKind" data-kind="keluhan">⚠ Keluhan</button><button class="' + (state.adKind === 'saran' ? 'on' : '') + '" data-action="adKind" data-kind="saran">💡 Saran</button></div></div><div class="anon-row"><div class="t"><b>Kirim sebagai anonim</b><p>Identitas Anda tidak akan diminta maupun ditampilkan.</p></div><button class="switch ' + (state.adAnon ? 'on' : '') + '" data-action="toggleAnon" aria-label="Mode anonim"></button></div>' + identity + '<div class="field"><label>Isi Aduan / Saran</label><textarea placeholder="Tuliskan keluhan atau saran Anda selengkap mungkin…" data-model="adMsg" data-focus="adMsg">' + esc(state.adMsg) + '</textarea></div><button class="btn btn-p" style="width:100%;justify-content:center" data-action="submitAduan">Kirim Aduan</button></div></div></section>';
   }
 
+  function viewAlumni() {
+    var years = alumni.map(function (a) { return a.lulus; }).filter(function (v, i, arr) { return arr.indexOf(v) === i; }).sort(function (a, b) { return b - a; });
+    var featured = alumni.filter(function (a) { return a.star; }).map(function (a) {
+      return '<div class="alum-card card"><div class="alum-star">★ Alumni Inspiratif</div><div class="alum-top"><div class="avatar">' + a.ini + '</div><div><h4>' + esc(a.name) + '</h4><span class="alum-meta">Angkatan ' + a.lulus + ' · ' + esc(a.kegiatan) + '</span></div></div><p class="alum-quote">“' + esc(a.quote) + '”</p></div>';
+    }).join('');
+    var dir = alumni.filter(function (a) { return state.alAngkatan === 'all' || String(a.lulus) === state.alAngkatan; });
+    var q = state.alSearch.trim().toLowerCase();
+    if (q) dir = dir.filter(function (a) { return (a.name + ' ' + a.kegiatan).toLowerCase().indexOf(q) !== -1; });
+    dir = dir.slice().sort(function (a, b) { return b.lulus - a.lulus; });
+    var dirHtml = dir.map(function (a) {
+      return '<div class="alum-item card"><div class="avatar">' + a.ini + '</div><div><div class="alum-name">' + esc(a.name) + '</div><div class="alum-sub"><span class="alum-badge">Lulus ' + a.lulus + '</span>' + esc(a.kegiatan) + '</div></div></div>';
+    }).join('');
+    var empty = dir.length === 0 ? '<div class="empty card"><div class="empty-ic">🎓</div><div style="font-weight:700">Alumni tidak ditemukan</div><p class="muted" style="font-size:14px">Coba ubah kata kunci atau pilih angkatan lain.</p></div>' : '';
+    var opt = function (v, l, c) { return '<option value="' + v + '"' + (c === v ? ' selected' : '') + '>' + l + '</option>'; };
+    var yearOpts = years.map(function (y) { return opt(String(y), 'Angkatan ' + y, state.alAngkatan); }).join('');
+
+    var formInner;
+    if (state.alSent) {
+      formInner = '<div class="card aduan-ok"><div class="ic">✓</div><h3>Terima kasih!</h3><p class="muted" style="max-width:34em;margin:0 auto">Data alumni Anda telah kami terima dan akan ditambahkan ke buku alumni sekolah. Sampai jumpa di kegiatan alumni berikutnya!</p><button class="btn btn-p" style="margin-top:22px" data-action="resetAlumni">Daftarkan alumni lain</button></div>';
+    } else {
+      var err = state.alErr ? '<div class="err">' + esc(state.alErr) + '</div>' : '';
+      formInner = '<div class="card aduan-card">' + err + '<div class="dp-grid"><div class="field"><label>Nama Lengkap</label><input type="text" placeholder="Nama Anda" value="' + esc(state.alfNama) + '" data-model="alfNama" data-focus="alfNama"></div><div class="field"><label>Tahun Lulus</label><input type="text" placeholder="mis. 2015" value="' + esc(state.alfLulus) + '" data-model="alfLulus" data-focus="alfLulus"></div></div><div class="field"><label>Kegiatan / Pekerjaan Sekarang</label><input type="text" placeholder="mis. Pelajar SMP · Guru · Wirausaha" value="' + esc(state.alfKegiatan) + '" data-model="alfKegiatan" data-focus="alfKegiatan"></div><div class="field"><label>Pesan &amp; Kesan untuk Sekolah</label><textarea placeholder="Bagikan kenangan atau pesan Anda untuk almamater…" data-model="alfPesan" data-focus="alfPesan">' + esc(state.alfPesan) + '</textarea></div><button class="btn btn-p" style="width:100%;justify-content:center" data-action="submitAlumni">Kirim Data Alumni</button></div>';
+    }
+
+    return '<section class="wrap sec">' +
+      '<div class="pustaka-hero alumni"><div><span class="pill" style="background:rgba(255,255,255,.16);color:#fff">Jejak Lulusan</span><h1>Portal Alumni SD Negeri 8 Arawai</h1><p>Rumah digital para lulusan sejak 1978 — tempat bersilaturahmi, berbagi kisah sukses, dan menginspirasi generasi penerus di Arawai, Raja Ampat.</p><div class="hero-cta"><a class="btn btn-light" href="#daftar-alumni">Daftar sebagai Alumni</a></div></div><div class="pustaka-hero-stats"><div><b>' + alumni.length + '</b><span>Alumni Terdata</span></div><div><b>' + years.length + '</b><span>Angkatan</span></div><div><b>1978</b><span>Sejak Berdiri</span></div></div></div>' +
+      '<div class="sec-head" style="margin-top:44px"><div><span class="eyebrow">Kisah Inspiratif</span><h2 class="sec-title" style="margin-top:8px">Jejak Langkah Alumni</h2></div></div><div class="alum-grid">' + featured + '</div>' +
+      '<div class="sec-head" style="margin-top:48px"><div><span class="eyebrow">Direktori</span><h2 class="sec-title" style="margin-top:8px">Data Alumni per Angkatan</h2></div></div><p class="muted" style="max-width:48em;margin:-8px 0 20px">Demi privasi, hanya nama, tahun lulus, dan kegiatan yang ditampilkan — tanpa nomor kontak atau alamat.</p><div class="filter-bar"><div class="search"><span style="color:var(--muted)">⌕</span><input placeholder="Cari nama atau kegiatan alumni…" value="' + esc(state.alSearch) + '" data-model="alSearch" data-focus="alSearch"></div><select class="select" data-model="alAngkatan">' + opt('all', 'Semua Angkatan', state.alAngkatan) + yearOpts + '</select></div>' + empty + '<div class="alum-dir">' + dirHtml + '</div><p class="muted" style="text-align:center;margin-top:22px;font-size:13.5px">Menampilkan ' + dir.length + ' alumni</p>' +
+      '<div class="psb gold" style="margin-top:48px"><div><span class="psb-period">◷ Silaturahmi tanpa batas waktu</span><h2>Ikatan Alumni Arawai</h2><p>Wadah para lulusan untuk saling terhubung, berbagi inspirasi, dan memberi kontribusi bagi almamater tercinta.</p></div><div class="psb-steps"><div style="font-weight:800;margin-bottom:6px">Agenda Alumni</div><div class="psb-step"><b>♦</b><span>Reuni Akbar setiap Hari Ulang Tahun Sekolah.</span></div><div class="psb-step"><b>♦</b><span>Sharing Alumni: berbagi kisah untuk adik kelas.</span></div><div class="psb-step"><b>♦</b><span>Bakti sosial &amp; bantuan perlengkapan belajar.</span></div></div></div>' +
+      '<div id="daftar-alumni" style="margin-top:48px"><div class="sec-head"><div><span class="eyebrow">Buku Alumni</span><h2 class="sec-title" style="margin-top:8px">Daftar sebagai Alumni</h2></div></div><p class="muted" style="max-width:48em;margin:-8px 0 20px">Sudah lulus dari SD Negeri 8 Arawai? Isi buku alumni digital ini agar tetap terhubung dengan sekolah dan adik-adik kelas.</p><div class="aduan" style="margin:0">' + formInner + '</div></div>' +
+      '</section>';
+  }
+
   function viewAkademik() {
     var modul = [
       ['👦', 'Data Induk Siswa', 'Biodata lengkap murid Kelas 1–6 yang terhubung dengan Dapodik sebagai data pokok pendidikan nasional.'],
@@ -524,7 +574,7 @@
   var VIEWS = {
     beranda: viewBeranda, profil: viewProfil, jadwal: viewJadwal,
     'guru-murid': viewGuruMurid, karya: viewKarya, perpustakaan: viewPerpustakaan,
-    akademik: viewAkademik, artikel: viewArtikel, aduan: viewAduan, akses: viewAkses
+    akademik: viewAkademik, alumni: viewAlumni, artikel: viewArtikel, aduan: viewAduan, akses: viewAkses
   };
 
   // ---- render ----
@@ -589,6 +639,11 @@
       case 'pickChild': setState({ waliChild: +ds.i }); break;
       case 'cmsTab': setState({ cmsTab: ds.tab }); break;
       case 'addArtikel': setState({ extraArtikel: state.extraArtikel + 1 }); break;
+      case 'submitAlumni':
+        if (!state.alfNama.trim()) { setState({ alErr: 'Mohon isi nama lengkap Anda.' }); break; }
+        if (!String(state.alfLulus).trim()) { setState({ alErr: 'Mohon isi tahun kelulusan Anda.' }); break; }
+        setState({ alSent: true, alErr: '' }); break;
+      case 'resetAlumni': setState({ alfNama: '', alfLulus: '', alfKegiatan: '', alfPesan: '', alSent: false, alErr: '' }); break;
       case 'adKind': setState({ adKind: ds.kind }); break;
       case 'toggleAnon': setState({ adAnon: !state.adAnon, adErr: '' }); break;
       case 'resetAduan': setState({ adKind: 'keluhan', adAnon: false, adName: '', adEmail: '', adHp: '', adMsg: '', adSent: false, adErr: '' }); break;
@@ -614,7 +669,7 @@
   });
   document.addEventListener('change', function (e) {
     var model = e.target.getAttribute('data-model');
-    if (model && (model === 'karyaKelas' || model === 'karyaJenis' || model === 'pustakaKategori' || model === 'pustakaLevel')) setState(patchFor(model, e.target.value));
+    if (model && (model === 'karyaKelas' || model === 'karyaJenis' || model === 'pustakaKategori' || model === 'pustakaLevel' || model === 'alAngkatan')) setState(patchFor(model, e.target.value));
   });
   function patchFor(model, val) { var p = {}; p[model] = val; return p; }
 
