@@ -85,6 +85,138 @@
     ['Puisi Bergambar Alam', 3, 'Seni', 'Damar Wicaksono', 'Kumpulan puisi tentang alam yang dipadukan ilustrasi tangan pada buku kecil buatan sendiri.'],
     ['Sabun Aroma Terapi Mini', 5, 'Kerajinan', 'Intan Permata', 'Sabun mini beraroma bunga dari bahan aman, dicetak berbagai bentuk dan dikemas sebagai suvenir.']
   ].map(function (w, i) { return { id: i, title: w[0], kelas: w[1], jenis: w[2], student: w[3], description: w[4], ini: ini(w[3]) }; });
+
+  // ---- perpustakaan digital (digital library) ----
+  // kategori list drives the filter + cover colour theme
+  var pustakaKategoriList = ['Dongeng & Cerita', 'Pengetahuan', 'Pelajaran', 'Wirausaha', 'Komik'];
+  var pustaka = [
+    {
+      title: 'Kancil dan Buaya', author: 'Cerita Rakyat Nusantara', kategori: 'Dongeng & Cerita', level: 'Umum', tahun: 2024, rating: 4.9,
+      sinopsis: 'Kisah klasik si Kancil yang cerdik menyeberangi sungai dengan mengelabui kawanan buaya. Sebuah dongeng jenaka tentang akal budi dan keberanian.',
+      isi: [
+        'Pada suatu pagi yang cerah, Kancil merasa sangat lapar. Ia teringat pada kebun mentimun di seberang sungai yang buahnya segar dan manis. Namun sungai itu lebar dan dalam, serta dihuni banyak buaya lapar.',
+        'Kancil duduk di tepi sungai sambil berpikir keras. Tiba-tiba ia mendapat akal. "Hai para buaya!" seru Kancil. "Raja hutan mengadakan pesta besar. Semua buaya akan mendapat daging segar. Aku diminta menghitung berapa jumlah kalian!"',
+        'Mendengar kata pesta dan daging, para buaya bergegas berbaris rapi dari tepi ke tepi sungai. Kancil pun melompat dari punggung buaya satu ke buaya lainnya sambil berpura-pura menghitung, "Satu, dua, tiga…"',
+        'Sesampainya di seberang, Kancil tertawa riang. "Terima kasih, buaya! Sebenarnya tidak ada pesta. Aku hanya ingin menyeberang!" Para buaya kesal karena tertipu, tetapi Kancil sudah asyik menikmati mentimun. Pesan cerita ini: gunakan akal dengan bijak, dan jangan mudah tergiur tanpa berpikir.'
+      ]
+    },
+    {
+      title: 'Legenda Danau Toba', author: 'Cerita Rakyat Sumatra', kategori: 'Dongeng & Cerita', level: 'Umum', tahun: 2023, rating: 4.7,
+      sinopsis: 'Asal mula Danau Toba dan Pulau Samosir yang lahir dari sebuah janji yang dilanggar. Dongeng tentang menepati janji dan menghargai orang tua.',
+      isi: [
+        'Dahulu kala hiduplah seorang petani bernama Toba. Suatu hari ia memancing dan mendapat ikan emas yang sangat indah. Ajaibnya, ikan itu berubah menjadi seorang putri cantik.',
+        'Putri bersedia menjadi istri Toba dengan satu syarat: Toba tidak boleh menceritakan asal-usulnya sebagai ikan kepada siapa pun. Toba berjanji, lalu mereka menikah dan dikaruniai seorang putra bernama Samosir.',
+        'Suatu hari Samosir yang lapar menghabiskan bekal ayahnya. Dalam marah, Toba lupa akan janjinya dan berteriak, "Dasar anak keturunan ikan!" Seketika langit gelap, hujan turun deras tiada henti.',
+        'Air memenuhi lembah dan membentuk danau luas yang kini disebut Danau Toba. Tanah tempat Samosir berdiri menjadi pulau di tengahnya, Pulau Samosir. Legenda ini mengajarkan kita untuk selalu menepati janji dan menjaga ucapan.'
+      ]
+    },
+    {
+      title: 'Petualangan di Kebun Sekolah', author: 'Tim Literasi SDN 8 Arawai', kategori: 'Dongeng & Cerita', level: 'Kelas 3', tahun: 2025, rating: 4.8,
+      sinopsis: 'Nadia dan teman-temannya menemukan keajaiban di kebun sekolah saat merawat tanaman sawi. Cerita tentang kerja sama dan cinta lingkungan.',
+      isi: [
+        'Setiap pagi sebelum bel berbunyi, Nadia dan kelompoknya menyiram tanaman sawi di kebun sekolah. Mereka menanamnya sejak awal semester sebagai bagian dari pelajaran IPAS.',
+        'Suatu hari Nadia melihat daun sawinya berlubang. "Pasti ada ulat!" seru Damar. Bukannya membasmi dengan sembarangan, Bu Guru mengajak mereka mengamati serangga itu dan belajar tentang rantai makanan.',
+        'Mereka membuat orang-orangan sawah kecil dan menanam bunga di sekeliling kebun untuk mengundang kupu-kupu. Perlahan kebun menjadi sehat dan hijau kembali.',
+        'Saat panen tiba, kelompok Nadia memanen sawi paling segar. Sebagian mereka jual di koperasi, sebagian disumbangkan ke dapur sekolah. Nadia belajar bahwa kesabaran dan kerja sama membuahkan hasil yang manis.'
+      ]
+    },
+    {
+      title: 'Mengenal Tata Surya', author: 'Rubrik Sains Anak', kategori: 'Pengetahuan', level: 'Kelas 6', tahun: 2024, rating: 4.6,
+      sinopsis: 'Jelajahi Matahari, delapan planet, dan benda langit lain dalam sistem tata surya kita dengan bahasa yang mudah dipahami.',
+      isi: [
+        'Tata surya adalah keluarga besar Matahari. Matahari berada di pusat, dan delapan planet mengelilinginya dalam lintasan yang disebut orbit. Matahari adalah bintang, yaitu bola gas raksasa yang memancarkan cahaya dan panas.',
+        'Empat planet terdekat — Merkurius, Venus, Bumi, dan Mars — disebut planet kebumian karena permukaannya padat berbatu. Bumi adalah satu-satunya planet yang diketahui memiliki kehidupan karena memiliki air dan udara.',
+        'Empat planet terjauh — Jupiter, Saturnus, Uranus, dan Neptunus — disebut planet raksasa gas. Jupiter adalah planet terbesar, sedangkan Saturnus terkenal dengan cincinnya yang indah.',
+        'Selain planet, tata surya juga berisi bulan, asteroid, dan komet. Mempelajari tata surya membantu kita memahami betapa luas dan menakjubkannya alam semesta ciptaan Tuhan.'
+      ]
+    },
+    {
+      title: 'Tubuh Manusia yang Menakjubkan', author: 'Rubrik Sains Anak', kategori: 'Pengetahuan', level: 'Kelas 5', tahun: 2024, rating: 4.5,
+      sinopsis: 'Bagaimana jantung memompa darah, paru-paru bernapas, dan otak berpikir? Kenali sistem tubuh manusia dengan cara yang seru.',
+      isi: [
+        'Tubuh kita bekerja seperti mesin yang sangat canggih. Setiap bagian memiliki tugas masing-masing dan bekerja sama tanpa henti, bahkan saat kita tidur.',
+        'Jantung adalah pompa sebesar kepalan tangan yang mengalirkan darah ke seluruh tubuh. Dalam sehari, jantung berdetak sekitar seratus ribu kali untuk mengantar oksigen dan sari makanan.',
+        'Paru-paru membantu kita bernapas. Saat menarik napas, paru-paru mengambil oksigen dari udara; saat mengembuskan, ia mengeluarkan karbon dioksida yang sudah tidak diperlukan.',
+        'Otak adalah pusat kendali tubuh. Ia mengatur gerakan, ingatan, dan perasaan. Untuk menjaga tubuh tetap sehat, kita perlu makan bergizi, cukup istirahat, dan rajin berolahraga.'
+      ]
+    },
+    {
+      title: 'Rahasia Tumbuhan Hijau', author: 'Rubrik Sains Anak', kategori: 'Pengetahuan', level: 'Kelas 4', tahun: 2023, rating: 4.4,
+      sinopsis: 'Mengapa daun berwarna hijau dan bagaimana tumbuhan membuat makanannya sendiri? Temukan keajaiban fotosintesis.',
+      isi: [
+        'Tumbuhan adalah makhluk hidup yang istimewa karena dapat membuat makanannya sendiri. Proses ajaib ini disebut fotosintesis, yang berlangsung di daun.',
+        'Daun berwarna hijau karena mengandung zat bernama klorofil. Klorofil menangkap cahaya Matahari, lalu bersama air dari akar dan udara, tumbuhan mengolahnya menjadi makanan berupa gula.',
+        'Selain membuat makanan, fotosintesis juga menghasilkan oksigen yang kita hirup. Itulah mengapa menanam pohon sangat penting untuk menjaga udara tetap bersih dan segar.',
+        'Rawatlah tumbuhan di sekitarmu dengan menyiram dan menjaganya. Dengan begitu, kita ikut menjaga bumi tetap hijau dan sehat untuk semua makhluk hidup.'
+      ]
+    },
+    {
+      title: 'Jago Perkalian', author: 'Seri Pintar Matematika', kategori: 'Pelajaran', level: 'Kelas 3', tahun: 2025, rating: 4.3,
+      sinopsis: 'Belajar perkalian dengan cara menyenangkan, mulai dari konsep dasar hingga trik menghafal tabel perkalian.',
+      isi: [
+        'Perkalian adalah cara cepat untuk menjumlahkan angka yang sama berulang kali. Contohnya, 3 x 4 berarti menjumlahkan angka 3 sebanyak empat kali: 3 + 3 + 3 + 3 = 12.',
+        'Kita bisa membayangkan perkalian sebagai kelompok benda. Jika ada 3 keranjang, dan tiap keranjang berisi 4 apel, maka jumlah seluruh apel adalah 3 x 4 = 12 apel.',
+        'Trik mudah menghafal perkalian 9: hasilnya selalu berjumlah 9. Misalnya 9 x 2 = 18 (1+8=9), 9 x 3 = 27 (2+7=9). Menarik, bukan?',
+        'Berlatihlah setiap hari dengan permainan kartu atau kuis bersama teman. Semakin sering berlatih, kamu akan semakin jago dan cepat dalam berhitung.'
+      ]
+    },
+    {
+      title: 'Pandai Menulis Cerita', author: 'Seri Cinta Bahasa', kategori: 'Pelajaran', level: 'Kelas 4', tahun: 2024, rating: 4.5,
+      sinopsis: 'Panduan langkah demi langkah menyusun cerita yang menarik: menentukan tokoh, latar, dan alur yang seru.',
+      isi: [
+        'Setiap cerita yang bagus memiliki tiga bagian penting: tokoh (siapa), latar (di mana dan kapan), dan alur (apa yang terjadi). Ketiganya ibarat bahan utama sebuah masakan lezat.',
+        'Mulailah dengan menentukan tokoh utama. Berikan ia nama, sifat, dan keinginan. Misalnya, seorang anak bernama Rio yang bercita-cita menjadi pemain bola.',
+        'Selanjutnya, buatlah masalah atau tantangan bagi tokohmu. Cerita menjadi seru ketika tokoh berjuang menghadapi rintangan sebelum akhirnya mencapai tujuannya.',
+        'Tutup cerita dengan akhir yang memuaskan atau pesan yang baik. Setelah selesai, bacalah kembali tulisanmu dan perbaiki kata yang kurang tepat. Selamat, kamu telah menjadi penulis cilik!'
+      ]
+    },
+    {
+      title: 'Wirausaha Cilik: Ide Pertamaku', author: 'Klub Wirausaha Sekolah', kategori: 'Wirausaha', level: 'Kelas 5', tahun: 2025, rating: 4.8,
+      sinopsis: 'Buku panduan memulai usaha kecil dari hobi: menemukan ide, menghitung modal, hingga menjual produk pertama.',
+      isi: [
+        'Menjadi wirausaha berarti berani menciptakan sesuatu yang bermanfaat dan menjualnya. Ide usaha bisa datang dari hobi atau hal yang kamu sukai, misalnya menggambar, memasak, atau membuat kerajinan.',
+        'Setelah punya ide, hitunglah modal. Modal adalah biaya untuk membeli bahan. Contohnya, untuk membuat gantungan kunci flanel, kamu perlu kain flanel, benang, dan gantungan. Catat semua harganya.',
+        'Tentukan harga jual yang wajar. Harga jual harus lebih besar dari modal agar kamu mendapat keuntungan. Selisih antara harga jual dan modal itulah yang disebut laba.',
+        'Terakhir, promosikan produkmu dengan sopan dan percaya diri kepada teman dan guru. Setiap penjualan adalah pengalaman berharga. Jangan takut gagal — dari situlah wirausaha sukses belajar!'
+      ]
+    },
+    {
+      title: 'Hemat Menabung Sejak Dini', author: 'Klub Wirausaha Sekolah', kategori: 'Wirausaha', level: 'Kelas 2', tahun: 2023, rating: 4.2,
+      sinopsis: 'Kebiasaan baik menabung dan membedakan kebutuhan dengan keinginan, dijelaskan sederhana untuk murid kelas rendah.',
+      isi: [
+        'Menabung berarti menyisihkan sebagian uang untuk disimpan, bukan langsung dibelanjakan. Uang yang ditabung bisa digunakan untuk hal penting di kemudian hari.',
+        'Sebelum membeli sesuatu, tanyakan pada dirimu: apakah ini kebutuhan atau keinginan? Kebutuhan adalah hal yang benar-benar diperlukan, seperti buku tulis. Keinginan adalah hal yang sekadar ingin dimiliki.',
+        'Kamu bisa mulai menabung di celengan atau tabungan sekolah. Sedikit demi sedikit, lama-lama menjadi bukit. Tabungan kecil setiap hari akan terkumpul menjadi banyak.',
+        'Dengan menabung, kamu belajar bersabar dan menghargai uang. Kebiasaan baik ini akan sangat berguna hingga kamu dewasa nanti.'
+      ]
+    },
+    {
+      title: 'Si Pemberani', author: 'Komik Karya Murid', kategori: 'Komik', level: 'Umum', tahun: 2025, rating: 4.9,
+      sinopsis: 'Komik pendek tentang Bima, murid pemalu yang menemukan keberaniannya saat menolong teman. Digambar oleh murid Kelas 6.',
+      isi: [
+        'Bab 1 — Bima adalah anak yang pemalu. Ia selalu duduk di pojok kelas dan jarang berbicara. Teman-teman menyebutnya "si pendiam". Namun di dalam hati, Bima menyimpan keinginan besar untuk menjadi berani.',
+        'Bab 2 — Suatu hari saat istirahat, Bima melihat seorang adik kelas terjatuh dan menangis karena diganggu. Tak ada yang berani menolong. Jantung Bima berdebar kencang.',
+        'Bab 3 — Dengan mengumpulkan seluruh keberaniannya, Bima maju. "Hentikan! Kita harus saling menjaga, bukan mengganggu," katanya dengan suara bergetar namun tegas. Semua terdiam.',
+        'Bab 4 — Sejak hari itu, teman-teman melihat Bima dengan pandangan baru. Bima sadar bahwa keberanian bukan berarti tidak takut, melainkan tetap melakukan hal benar meski hati merasa takut. Tamat.'
+      ]
+    },
+    {
+      title: 'Pahlawan dari Tanah Papua', author: 'Seri Pahlawan Nusantara', kategori: 'Pengetahuan', level: 'Umum', tahun: 2024, rating: 4.6,
+      sinopsis: 'Mengenal tokoh dan semangat perjuangan dari tanah Papua yang menginspirasi persatuan dan cinta tanah air.',
+      isi: [
+        'Indonesia adalah negeri yang luas, membentang dari Sabang sampai Merauke. Tanah Papua di ujung timur menyimpan banyak kisah perjuangan dan tokoh yang menginspirasi.',
+        'Frans Kaisiepo adalah salah satu pahlawan nasional dari Papua. Ia berjuang agar Papua menjadi bagian dari Negara Kesatuan Republik Indonesia. Namanya kini diabadikan sebagai nama bandara di Biak.',
+        'Semangat para pahlawan mengajarkan kita untuk mencintai tanah air, menghargai perbedaan, dan menjaga persatuan. Meski berbeda suku dan bahasa, kita semua adalah satu bangsa Indonesia.',
+        'Sebagai murid, cara kita menjadi pahlawan masa kini adalah dengan rajin belajar, menghormati sesama, dan menjaga lingkungan. Dari sekolah kecil di Arawai, kita bisa berbuat besar untuk negeri.'
+      ]
+    }
+  ].map(function (b, i) {
+    return {
+      id: i, title: b.title, author: b.author, kategori: b.kategori, level: b.level,
+      tahun: b.tahun, rating: b.rating, sinopsis: b.sinopsis, isi: b.isi, halaman: b.isi.length
+    };
+  });
+
   var articles = [
     ['Panen Raya Kebun Sekolah Kelas 4', 'news', '2025-12-02', 'Murid Kelas 4 memanen sayuran dari kebun sekolah hasil program berkebun satu semester.', 'Program berkebun Kelas 4 memasuki masa panen. Sepanjang semester, murid merawat bibit sawi, kangkung, dan tomat di kebun mini belakang sekolah.', ['Kegiatan panen berlangsung meriah. Setiap kelompok memanen dan menimbang hasilnya, lalu belajar menghitung berapa banyak yang bisa dijual di koperasi sekolah.', 'Guru pendamping menekankan bahwa proyek ini bukan sekadar berkebun, tetapi melatih kesabaran, kerja sama, dan pengenalan siklus tumbuhan yang dipelajari di IPAS.', 'Sebagian hasil panen disumbangkan ke dapur sekolah untuk program makan sehat bersama.']],
     ['Tim Robotik Raih Juara 2 Tingkat Kota', 'news', '2025-11-24', 'Tim robotik SDN 8 Arawai membawa pulang medali perak pada lomba tingkat kota.', 'Tim robotik yang beranggotakan murid Kelas 5 dan 6 berhasil meraih Juara 2 pada Kompetisi Robotik Pelajar tingkat kota akhir pekan lalu.', ['Setelah berlatih rutin selama dua bulan, tim merancang robot pemilah sampah sederhana yang mendapat apresiasi juri karena idenya ramah lingkungan.', 'Kepala sekolah mengucapkan selamat dan berharap prestasi ini memotivasi murid lain untuk gemar berinovasi.']],
@@ -132,13 +264,14 @@
     route: CONFIG.defaultRoute, menu: false,
     jadwalKelas: 1, gmTab: 'guru',
     karyaKelas: 'all', karyaJenis: 'all', karyaSearch: '', karyaDetail: null,
+    pustakaSearch: '', pustakaKategori: 'all', pustakaLevel: 'all', pustakaDetail: null, pustakaReading: false, pustakaPage: 0,
     artikelSearch: '', artikelShown: 4, artikelDetail: null,
     auth: null, loginEmail: '', loginPass: '', loginError: '',
     waliChild: 0, cmsTab: 'artikel', extraArtikel: 0, scrolled: false,
     adKind: 'keluhan', adAnon: false, adName: '', adEmail: '', adHp: '', adMsg: '', adSent: false, adErr: ''
   };
   function setState(patch) { for (var kk in patch) state[kk] = patch[kk]; render(); }
-  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, loginError: '' }); window.scrollTo(0, 0); }
+  function go(r) { setState({ route: r, menu: false, karyaDetail: null, artikelDetail: null, pustakaDetail: null, pustakaReading: false, pustakaPage: 0, loginError: '' }); window.scrollTo(0, 0); }
 
   // ---- reusable partials ----
   function chips(current) {
@@ -173,7 +306,7 @@
 
       '<section class="wrap sec lay-sec" style="padding-top:8px"><div class="sec-head"><div><span class="eyebrow">Layanan Sekolah</span><h2 class="sec-title" style="margin-top:8px">Layanan Digital Sekolah</h2></div></div><div class="lay-runzone"><div class="lay-runner"><div class="lay-bob"><div class="rn-shout">yeaa aku juara!</div><div class="rn-fig"><svg viewBox="0 0 74 64" fill="none" stroke="#8a1f2e" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="13" r="8.4" fill="#fff"/><path d="M18.5 11.5 Q20.5 9.8 22.5 11.5 M25 11.5 Q27 9.8 29 11.5"/><circle cx="23.5" cy="16.5" r="1.7" fill="#8a1f2e" stroke="none"/><path d="M25 21 L18 42"/><g class="rn-arm"><path d="M24 25 L11 21"/></g><g class="rn-leg1"><path d="M18 42 L31 55"/></g><g class="rn-leg2"><path d="M18 42 L5 57"/></g><path d="M24 24 L49 29"/><g stroke-width="2.6"><path d="M45 16 L61 16 L59 25 Q53 31 47 25 Z"/><path d="M45 17 Q39 18 43 25 M61 17 Q67 18 63 25"/><path d="M53 31 L53 36 M48 37 L58 37 M50 40 L56 40"/><path d="M53 36 L49 29" stroke-width="3.4"/><text x="53" y="24" font-size="9" font-weight="800" fill="#8a1f2e" stroke="none" text-anchor="middle" font-family="Baloo 2,cursive">1</text></g></svg></div></div></div></div><div class="lay-grid">' +
       '<button class="lay-card" data-go="akses"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 4v16"/></svg></div><h4>Sistem Informasi Akademik</h4><p>Data nilai, rapor, dan perkembangan belajar murid dalam satu portal.</p><span class="go">Buka layanan →</span></button>' +
-      '<button class="lay-card" data-go="karya"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Perpustakaan Digital</h4><p>Koleksi buku, cerita, dan bahan bacaan yang bisa diakses kapan saja.</p><span class="go">Buka layanan →</span></button>' +
+      '<button class="lay-card" data-go="perpustakaan"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><h4>Perpustakaan Digital</h4><p>Koleksi buku, cerita, dan bahan bacaan yang bisa diakses kapan saja.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card gold" data-go="artikel"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h4>Portal Alumni</h4><p>Wadah silaturahmi dan jejak prestasi para lulusan SD Negeri 8 Arawai.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="guru-murid"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Guru & Tenaga Kependidikan</h4><p>Direktori guru dan staf pengajar beserta perannya di sekolah.</p><span class="go">Buka layanan →</span></button>' +
       '<button class="lay-card" data-go="jadwal"><div class="lay-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><h4>Kalender Akademik</h4><p>Jadwal pelajaran, kegiatan, libur, dan agenda penting sepanjang tahun.</p><span class="go">Buka layanan →</span></button>' +
@@ -233,6 +366,65 @@
       '<select class="select" data-model="karyaKelas">' + opt('all', 'Semua Kelas', state.karyaKelas) + opt('1', 'Kelas 1', state.karyaKelas) + opt('2', 'Kelas 2', state.karyaKelas) + opt('3', 'Kelas 3', state.karyaKelas) + opt('4', 'Kelas 4', state.karyaKelas) + opt('5', 'Kelas 5', state.karyaKelas) + opt('6', 'Kelas 6', state.karyaKelas) + '</select>' +
       '<select class="select" data-model="karyaJenis">' + opt('all', 'Semua Jenis', state.karyaJenis) + opt('Kerajinan', 'Kerajinan', state.karyaJenis) + opt('Kuliner', 'Kuliner', state.karyaJenis) + opt('Seni', 'Seni', state.karyaJenis) + opt('Digital', 'Digital', state.karyaJenis) + '</select></div>' +
       empty + '<div class="karya-grid ' + (CONFIG.compactCards ? 'compact' : '') + '">' + grid + '</div><p class="muted" style="text-align:center;margin-top:26px;font-size:13.5px">Menampilkan ' + kl.length + ' karya</p></div></section>';
+  }
+
+  // ---- perpustakaan digital helpers + view ----
+  function bookCls(kat) {
+    return { 'Dongeng & Cerita': 'bc0', 'Pengetahuan': 'bc1', 'Pelajaran': 'bc2', 'Wirausaha': 'bc3', 'Komik': 'bc4' }[kat] || 'bc1';
+  }
+  function bookEmoji(kat) {
+    return { 'Dongeng & Cerita': '📖', 'Pengetahuan': '🔭', 'Pelajaran': '✏️', 'Wirausaha': '💡', 'Komik': '💥' }[kat] || '📚';
+  }
+  function stars(r) {
+    var full = Math.round(r);
+    var s = '';
+    for (var i = 1; i <= 5; i++) s += '<span class="' + (i <= full ? 'on' : '') + '">★</span>';
+    return '<span class="stars">' + s + '</span><span class="rate-n">' + r.toFixed(1) + '</span>';
+  }
+  function bookCover(b, size) {
+    return '<div class="book-cover ' + bookCls(b.kategori) + ' ' + (size || '') + '"><span class="bc-emoji">' + bookEmoji(b.kategori) + '</span><div class="bc-txt"><div class="bc-title">' + esc(b.title) + '</div><div class="bc-author">' + esc(b.author) + '</div></div></div>';
+  }
+
+  function viewPerpustakaan() {
+    var bd = pustaka.filter(function (b) { return b.id === state.pustakaDetail; })[0];
+    if (bd) {
+      if (state.pustakaReading) {
+        var total = bd.isi.length;
+        var pg = Math.min(state.pustakaPage, total - 1);
+        var prevD = pg <= 0 ? ' disabled' : '';
+        var nextLabel = pg >= total - 1 ? 'Selesai' : 'Lanjut →';
+        return '<section class="wrap sec"><button class="back" data-action="pustakaCloseRead">← Kembali ke detail buku</button>' +
+          '<div class="reader"><div class="reader-head"><span class="pill">' + esc(bd.kategori) + '</span><h1>' + esc(bd.title) + '</h1><p class="muted" style="font-size:13.5px;font-weight:600;margin-top:6px">' + esc(bd.author) + '</p></div>' +
+          '<div class="reader-page"><span class="reader-drop">' + esc(bd.isi[pg].charAt(0)) + '</span>' + esc(bd.isi[pg].slice(1)) + '</div>' +
+          '<div class="reader-nav"><button class="btn btn-g btn-sm" data-action="pustakaPrev"' + prevD + '>← Sebelumnya</button><span class="reader-count">Halaman ' + (pg + 1) + ' / ' + total + '</span><button class="btn btn-p btn-sm" data-action="pustakaNext">' + nextLabel + '</button></div>' +
+          '<div class="reader-progress"><span style="width:' + Math.round(((pg + 1) / total) * 100) + '%"></span></div></div></section>';
+      }
+      return '<section class="wrap sec"><button class="back" data-action="pustakaClose">← Kembali ke perpustakaan</button>' +
+        '<div class="book-detail"><div>' + bookCover(bd, 'big') + '<button class="btn btn-p" style="width:100%;justify-content:center;margin-top:18px" data-action="pustakaRead">📖 Baca Buku</button></div>' +
+        '<div><span class="pill">' + esc(bd.kategori) + '</span><h1 class="sec-title" style="font-size:32px;margin:14px 0 10px">' + esc(bd.title) + '</h1><div class="book-rate">' + stars(bd.rating) + '</div>' +
+        '<div class="book-meta"><div><span class="muted">Penulis</span><b>' + esc(bd.author) + '</b></div><div><span class="muted">Tingkat</span><b>' + esc(bd.level) + '</b></div><div><span class="muted">Halaman</span><b>' + bd.halaman + '</b></div><div><span class="muted">Tahun</span><b>' + bd.tahun + '</b></div></div>' +
+        '<h3 style="font-size:17px;font-weight:800;margin:22px 0 8px">Sinopsis</h3><p style="font-size:15.5px;line-height:1.75;color:#4a3a34">' + esc(bd.sinopsis) + '</p></div></div></section>';
+    }
+
+    var list = pustaka.filter(function (b) {
+      return (state.pustakaKategori === 'all' || b.kategori === state.pustakaKategori) && (state.pustakaLevel === 'all' || b.level === state.pustakaLevel);
+    });
+    var q = state.pustakaSearch.trim().toLowerCase();
+    if (q) list = list.filter(function (b) { return (b.title + ' ' + b.author + ' ' + b.sinopsis).toLowerCase().indexOf(q) !== -1; });
+    var grid = list.map(function (b) {
+      return '<div class="book-card" data-action="pustakaOpen" data-id="' + b.id + '">' + bookCover(b) +
+        '<div class="book-body"><h4>' + esc(b.title) + '</h4><p class="muted" style="font-size:12.5px">' + esc(b.author) + '</p><div class="book-tags"><span class="pill">' + esc(b.level) + '</span><span class="book-rate sm">' + stars(b.rating) + '</span></div></div></div>';
+    }).join('');
+    var opt = function (v, label, cur) { return '<option value="' + v + '"' + (cur === v ? ' selected' : '') + '>' + label + '</option>'; };
+    var katOpts = pustakaKategoriList.map(function (k) { return opt(k, k, state.pustakaKategori); }).join('');
+    var levels = ['Umum', 'Kelas 1', 'Kelas 2', 'Kelas 3', 'Kelas 4', 'Kelas 5', 'Kelas 6'];
+    var levOpts = levels.map(function (l) { return opt(l, l, state.pustakaLevel); }).join('');
+    var empty = list.length === 0 ? '<div class="empty card"><div class="empty-ic">📚</div><div style="font-weight:700">Buku tidak ditemukan</div><p class="muted" style="font-size:14px">Coba ubah kata kunci, kategori, atau tingkat kelas.</p></div>' : '';
+    return '<section class="wrap sec"><div class="pustaka-hero"><div><span class="pill" style="background:rgba(255,255,255,.16);color:#fff">Perpustakaan Digital</span><h1>Jendela Ilmu SD Negeri 8 Arawai</h1><p>Koleksi buku cerita, pengetahuan, dan bacaan wirausaha yang bisa dibaca kapan saja, di mana saja — langsung dari layar.</p></div><div class="pustaka-hero-stats"><div><b>' + pustaka.length + '</b><span>Judul Buku</span></div><div><b>' + pustakaKategoriList.length + '</b><span>Kategori</span></div><div><b>24/7</b><span>Akses</span></div></div></div>' +
+      '<div class="filter-bar" style="margin-top:30px"><div class="search"><span style="color:var(--muted)">⌕</span><input placeholder="Cari judul, penulis, atau topik…" value="' + esc(state.pustakaSearch) + '" data-model="pustakaSearch" data-focus="pustakaSearch"></div>' +
+      '<select class="select" data-model="pustakaKategori">' + opt('all', 'Semua Kategori', state.pustakaKategori) + katOpts + '</select>' +
+      '<select class="select" data-model="pustakaLevel">' + opt('all', 'Semua Tingkat', state.pustakaLevel) + levOpts + '</select></div>' +
+      empty + '<div class="pustaka-grid">' + grid + '</div><p class="muted" style="text-align:center;margin-top:26px;font-size:13.5px">Menampilkan ' + list.length + ' dari ' + pustaka.length + ' buku</p></section>';
   }
 
   function viewArtikel() {
@@ -299,8 +491,8 @@
 
   var VIEWS = {
     beranda: viewBeranda, profil: viewProfil, jadwal: viewJadwal,
-    'guru-murid': viewGuruMurid, karya: viewKarya, artikel: viewArtikel,
-    aduan: viewAduan, akses: viewAkses
+    'guru-murid': viewGuruMurid, karya: viewKarya, perpustakaan: viewPerpustakaan,
+    artikel: viewArtikel, aduan: viewAduan, akses: viewAkses
   };
 
   // ---- render ----
@@ -341,6 +533,17 @@
       case 'gmTab': setState({ gmTab: ds.tab }); break;
       case 'karyaOpen': setState({ karyaDetail: +ds.id }); window.scrollTo(0, 0); break;
       case 'karyaClose': setState({ karyaDetail: null }); break;
+      case 'pustakaOpen': setState({ pustakaDetail: +ds.id, pustakaReading: false, pustakaPage: 0 }); window.scrollTo(0, 0); break;
+      case 'pustakaClose': setState({ pustakaDetail: null, pustakaReading: false }); window.scrollTo(0, 0); break;
+      case 'pustakaRead': setState({ pustakaReading: true, pustakaPage: 0 }); window.scrollTo(0, 0); break;
+      case 'pustakaCloseRead': setState({ pustakaReading: false }); window.scrollTo(0, 0); break;
+      case 'pustakaPrev': if (state.pustakaPage > 0) setState({ pustakaPage: state.pustakaPage - 1 }); window.scrollTo(0, 0); break;
+      case 'pustakaNext': {
+        var bk = pustaka.filter(function (b) { return b.id === state.pustakaDetail; })[0];
+        if (bk && state.pustakaPage >= bk.isi.length - 1) setState({ pustakaReading: false });
+        else setState({ pustakaPage: state.pustakaPage + 1 });
+        window.scrollTo(0, 0); break;
+      }
       case 'openArt': setState({ route: 'artikel', artikelDetail: +ds.id, menu: false }); window.scrollTo(0, 0); break;
       case 'artClose': setState({ artikelDetail: null }); break;
       case 'loadMore': setState({ artikelShown: state.artikelShown + 4 }); break;
@@ -379,7 +582,7 @@
   });
   document.addEventListener('change', function (e) {
     var model = e.target.getAttribute('data-model');
-    if (model && (model === 'karyaKelas' || model === 'karyaJenis')) setState(patchFor(model, e.target.value));
+    if (model && (model === 'karyaKelas' || model === 'karyaJenis' || model === 'pustakaKategori' || model === 'pustakaLevel')) setState(patchFor(model, e.target.value));
   });
   function patchFor(model, val) { var p = {}; p[model] = val; return p; }
 
@@ -399,7 +602,7 @@
       mx = e.clientX; my = e.clientY;
       if (dot) dot.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px) translate(-50%,-50%)';
       if (!shown) { shown = true; if (ring) ring.style.opacity = '1'; if (dot) dot.style.opacity = '1'; }
-      var hot = e.target && e.target.closest && e.target.closest('button,a,input,select,label,.kelas-card,.karya-card,.child-card,.ann-item,.news-item,.chip,.tab,.brand,.cms-navb');
+      var hot = e.target && e.target.closest && e.target.closest('button,a,input,select,label,.kelas-card,.karya-card,.book-card,.child-card,.ann-item,.news-item,.chip,.tab,.brand,.cms-navb');
       if (ring) ring.style.width = ring.style.height = hot ? '56px' : '36px';
     }, { passive: true });
     function loop() {
