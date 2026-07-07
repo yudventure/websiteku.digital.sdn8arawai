@@ -1,6 +1,0 @@
-git init
-git branch -M main
-git add .
-git commit -m "Website SDN 8 Arawai"
-git remote add origin https://github.com/yudventure/websiteku.digital.sdn8arawai.git
-git push -u origin main
